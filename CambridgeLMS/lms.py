@@ -282,7 +282,7 @@ class LMS:
     def solve(self, units: List[Unit]):
         for unit in units:
             for lesson in unit.lessons:
-                print(lesson)
+                print(lesson.title, '|', lesson.url)
 
                 response = self.s.get(lesson.url)
                 soup = bs4.BeautifulSoup(response.content, 'html.parser')
